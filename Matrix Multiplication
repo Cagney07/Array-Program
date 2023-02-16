@@ -1,0 +1,65 @@
+#include <stdio.h>
+int main()
+{
+    int i,j,k;
+    int a[10][10],b[10][10],c[10][10];
+    int m,n,p,q,sum=0;
+    printf("Enter the order of matrix a:");
+    scanf("%d %d",&m,&n);
+    printf("\nEnter the order of matrix b:");
+    scanf("%d %d",&p,&q);
+    if(n!=p)
+    {
+        printf("Matrix Multiplication is  not possible");
+    }
+    else
+    {
+        printf("\nEnter the element of matrix a\n");
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                printf("Enter the elements a[%d][%d]:",i+1,j+1);
+                scanf("%d",&a[i][j]);
+            }
+        }
+        printf("\n");
+
+        printf("\nEnter the element of matrix b\n");
+        for (int i = 0; i < p; i++)
+        {
+            for (int j = 0; j < q; j++)
+            {
+                printf("Enter the elements b[%d][%d]:",i+1,j+1);
+                scanf("%d",&b[i][j]);
+            }
+
+        }
+        printf("\n");
+
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0;j < q ;j++)
+            {
+                for (int k = 0; k < p; k++)
+                {
+                    sum=sum+(a[i][k]*b[k][j]);
+                   
+                }
+                c[i][j]=sum;
+                sum=0;
+            }
+            
+        }
+        printf("The product of 2 matrix:\n");
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < q; j++)
+            {
+                printf("%d ",c[i][j]);
+            }
+            printf("\n");
+            
+        }
+      
+    }
